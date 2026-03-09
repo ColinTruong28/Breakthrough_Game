@@ -6,8 +6,6 @@ from tqdm import tqdm
 from games import Game
 
 # The template uses the defined Game class in games.py.
-# Please read the source code for them, which includes comments.
-# Also, you may refer to TicTacToe example for Breakthrough implementation.
 
 class Breakthrough(Game):
     def initial_state(self): # ⚠️ DO NOT CHANGE THIS FUNCTION
@@ -26,13 +24,6 @@ class Breakthrough(Game):
         } # ⚠️ You must use this structure for the state representation.
 
     def to_move(self, state):
-        ##########################################################################
-        #  __   __                  ____          _         _   _
-        #  \ \ / /__  _   _ _ __   / ___|___   __| | ___   | | | | ___ _ __ ___
-        #   \ V / _ \| | | | '__| | |   / _ \ / _` |/ _ \  | |_| |/ _ \ '__/ _ \
-        #    | | (_) | |_| | |    | |__| (_) | (_| |  __/  |  _  |  __/ | |  __/
-        #    |_|\___/ \__,_|_|     \____\___/ \__,_|\___|  |_| |_|\___|_|  \___|
-        # Return the player to move in this state. Possible values: "WHITE" or "BLACK".
         return state['to_move']
 
     def actions(self, state):
@@ -87,14 +78,7 @@ class Breakthrough(Game):
 
         
     def utility(self, state, player):
-        ##########################################################################
-        #  __   __                  ____          _         _   _
-        #  \ \ / /__  _   _ _ __   / ___|___   __| | ___   | | | | ___ _ __ ___
-        #   \ V / _ \| | | | '__| | |   / _ \ / _` |/ _ \  | |_| |/ _ \ '__/ _ \
-        #    | | (_) | |_| | |    | |__| (_) | (_| |  __/  |  _  |  __/ | |  __/
-        #    |_|\___/ \__,_|_|     \____\___/ \__,_|\___|  |_| |_|\___|_|  \___|
-        # Return the value to the perspective of the "player";
-        #    Positive for win, negative for loss, 0 otherwise.
+        
         grid = state['board']
         opponent = "BLACK" if player == "WHITE" else "WHITE"
         
@@ -111,12 +95,6 @@ class Breakthrough(Game):
         return 0
 
     def terminal_test(self, state):
-        ##########################################################################
-        #  __   __                  ____          _         _   _
-        #  \ \ / /__  _   _ _ __   / ___|___   __| | ___   | | | | ___ _ __ ___
-        #   \ V / _ \| | | | '__| | |   / _ \ / _` |/ _ \  | |_| |/ _ \ '__/ _ \
-        #    | | (_) | |_| | |    | |__| (_) | (_| |  __/  |  _  |  __/ | |  __/
-        #    |_|\___/ \__,_|_|     \____\___/ \__,_|\___|  |_| |_|\___|_|  \___|
         grid = state['board']
         if "WHITE" in grid[0]:
             return True
@@ -141,15 +119,6 @@ class Breakthrough(Game):
         print(f"Captures: White captured {state['captures']['WHITE']} pieces, Black captured {state['captures']['BLACK']} pieces")
 
 
-
-##########################################################################
-#  __   __                  ____          _         _   _
-#  \ \ / /__  _   _ _ __   / ___|___   __| | ___   | | | | ___ _ __ ___
-#   \ V / _ \| | | | '__| | |   / _ \ / _` |/ _ \  | |_| |/ _ \ '__/ _ \
-#    | | (_) | |_| | |    | |__| (_) | (_| |  __/  |  _  |  __/ | |  __/
-#    |_|\___/ \__,_|_|     \____\___/ \__,_|\___|  |_| |_|\___|_|  \___|
-#
-# Evaluation functions
 
 def defensive_eval_1(state, player):
     grid = state['board']

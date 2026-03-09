@@ -25,12 +25,7 @@ from breakthrough_agent import MinimaxAgent, AlphaBetaAgent
 # REQUIRED PACKAGES: click, numpy, pygame, tqdm
 
 
-##########################################################################
-#  __   __                  ____          _         _   _
-#  \ \ / /__  _   _ _ __   / ___|___   __| | ___   | | | | ___ _ __ ___
-#   \ V / _ \| | | | '__| | |   / _ \ / _` |/ _ \  | |_| |/ _ \ '__/ _ \
-#    | | (_) | |_| | |    | |__| (_) | (_| |  __/  |  _  |  __/ | |  __/
-#    |_|\___/ \__,_|_|     \____\___/ \__,_|\___|  |_| |_|\___|_|  \___|
+
 # Perform the necessary experiments here to generate data required by the report.
 
 def run_matchup(white_agent, black_agent, games=1):
